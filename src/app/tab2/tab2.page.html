@@ -1,17 +1,71 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Jadwal Mingguan
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-accordion-group>
+    <ion-accordion value="senin">
+      <ion-item slot="header" color="light">
+        <ion-label>Senin</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-item>
+          <ion-label>
+            <h2>PGPGL</h2>
+            <p>Pemprograman Geospatial Lanjut</p>
+          </ion-label>
+          <ion-label>
+            <h2>METOPEN</h2>
+            <p>Metodologi Penelitian</p>
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-accordion>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <ion-accordion value="selasa">
+      <ion-item slot="header" color="light">
+        <ion-label>Selasa</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-item>
+          <ion-label>
+            <h2>Pendidikan Pancasila</h2>
+            <p>Fakultas Filsafat</p>
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion value="rabu">
+      <ion-item slot="header" color="light">
+        <ion-label>Rabu</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-item>
+          <ion-label>
+            <h2>SDGL</h2>
+            <p>Sains Data Geospasil Lanjut</p>
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion value="kamis">
+      <ion-item slot="header" color="light">
+        <ion-label>Kamis</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-item>
+          <ion-label>
+            <h2>APSIG SDA</h2>
+            <p>Sumber Daya Air</p>
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
 </ion-content>
