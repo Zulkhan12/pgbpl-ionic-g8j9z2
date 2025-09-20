@@ -1,25 +1,35 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, inject } from '@angular/core';
+import { NavController, AlertController } from '@ionic/angular';
+import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: false
 })
-export class LoginPage implements OnInit {
+export class LoginPage {
 
-  username= '';
-  password= '';
-  constructor() { }
+  email = '';
+  password = '';
 
-  ngOnInit() {
-  }
+  private navCtrl = inject(NavController);
+  private alertCtrl = inject(AlertController);
+  private authService = inject(AuthService);
 
-  login(){
-    if(this.username==='admin' && this.password==='password'){
-      window.location.href='main';
-    } else {
-      alert('Invalid Credentials');
+  async login() {
+    if (this.email && this.password) {
+      try {
+        await this.authService.login(this.email, this.password);
+        this.navCtrl.navigateRoot('/main');
+      } catch (error: any) {
+        const alert = await this.alertCtrl.create({
+          header: 'Login Failed',
+          message: error.message,
+          buttons: ['OK'],
+        });
+        await alert.present();
+      }
     }
   }
+
 }
