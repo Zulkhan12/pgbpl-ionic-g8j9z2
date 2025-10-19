@@ -36,3 +36,15 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
 @import "leaflet/dist/leaflet.css";
+
+.custom-popup {
+  .popup-buttons {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.leaflet-popup-content {
+    width: auto !important;
+    min-width: 120px;
+}

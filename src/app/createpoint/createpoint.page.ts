@@ -81,7 +81,7 @@ export class CreatepointPage implements OnInit {
         });
 
         // Back to route maps
-        this.navCtrl.navigateBack('/maps');
+        this.navCtrl.navigateBack('/main/maps');
       } catch (error: any) {
         const alert = await this.alertCtrl.create({
           header: 'Save Failed',

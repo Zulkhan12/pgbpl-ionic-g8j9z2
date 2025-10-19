@@ -23,5 +23,20 @@ export class DataService {
     });
   }
 
+  deletePoint(pointId: string) {
+    const pointRef = ref(database, `points/${pointId}`);
+    return remove(pointRef);
+  }
+
+  getPoint(pointId: string) {
+    const pointRef = ref(database, `points/${pointId}`);
+    return get(pointRef);
+  }
+
+  updatePoint(pointId: string, point: { name: string, coordinates: string }) {
+    const pointRef = ref(database, `points/${pointId}`);
+    return update(pointRef, point);
+  }
+
 
 }
